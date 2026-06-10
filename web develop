@@ -1,0 +1,399 @@
+Markdown
+# Design Tokens & Component System
+
+## Colors
+- Primary: #5A8FB0
+- Ink: #1A1A1A
+- Ink Muted: #6B6B6B
+- Surface Background: #FCFAF3
+- Card Background: #FFFFFF
+- Border: #EFE9D8
+- Priority High: #C76A55
+- Priority Medium: #C9A23A
+- Priority Low / Success: #7A9165
+
+## Typography
+- Display: 28px Bold, Line Height 36px, Tracking -0.5px
+- H1: 22px SemiBold, Line Height 28px, Tracking -0.2px
+- H2: 18px SemiBold, Line Height 24px, Tracking 0px
+- Body: 16px Regular, Line Height 24px, Tracking 0px
+- Caption: 14px Medium, Line Height 20px, Tracking 0px
+- Small: 12px Medium, Line Height 16px, Tracking +0.1px
+
+## Spacing System
+- Base unit: 4px | Available steps: 4, 8, 12, 16, 24, 32, 48
+
+## Corner Radius
+- Small: 8px (Chips, Checkboxes)
+- Card: 12px (Task Cards, Stats Cards, Modals)
+- Button: 16px (Primary Buttons, Form Inputs)
+- Pill/Avatar: 9999px (Fully Rounded Avatars, Selection States)
+
+## Global Constraints
+- Canvas Size: 390px × 844px (iPhone 14/15 Form Factor)
+- Safe Area Margins: Left 16px, Right 16px, Top 48px, Bottom 32px
+- Base Elevation: Soft Shadow `0px 4px 12px rgba(26, 26, 26, 0.04)`
+
+UI Specification for Google Stitch Generation
+SCREEN 1 – ONBOARDING
+Layout Blueprint & Structure
+
+
+Canvas Context: Vertical stack with Surface Background (#FCFAF3), 16px lateral safe padding.
+
+Top Region (Padding Top: 48px): Centered Branding Block.
+
+
+Tide Logo: Inline abstract geometric wave vector icon in Primary (#5A8FB0).
+
+Application Title: Text "Tide", Typography: H1, Color: Ink (#1A1A1A), Margin Top: 8px.
+
+Center Region (Margin Top: 48px): Hero Illustration Container.
+
+
+Dimensions: 358px × 300px aspect-locked minimalist line-art illustration representing time blocking and focus waves. Primary accent styling.
+
+Text Block (Margin Top: 32px):
+
+
+Headline: "Own your time, find your focus.", Typography: Display, Color: Ink (#1A1A1A), Text Align: Center.
+
+Description: "Organize tasks, build lasting habits, and clear your mind every day.", Typography: Body, Color: Ink Muted (#6B6B6B), Text Align: Center, Margin Top: 12px.
+
+Bottom Action Region (Fixed Bottom Safe Area, Margin Bottom: 32px):
+
+
+Primary Button: Text "Get Started", Width: Full (358px), Height: 56px, Radius: 16, Background: Primary (#5A8FB0), Typography: H2 (White text).
+SCREEN 2 – LOGIN
+Layout Blueprint & Structure
+
+
+Canvas Context: Surface Background (#FCFAF3), 16px lateral padding. Top navigation header zone left empty for clean presentation.
+
+Header Block (Margin Top: 48px):
+
+
+Title: "Welcome Back", Typography: Display, Color: Ink (#1A1A1A).
+
+Subtitle: "Log in to sync your tasks and focus streaks.", Typography: Body, Color: Ink Muted (#6B6B6B), Margin Top: 8px.
+
+Form Block (Margin Top: 32px, Vertical Gap: 16px):
+
+
+Input Field 1 (Email):
+
+
+Label: "Email Address", Typography: Caption, Color: Ink Muted (#6B6B6B), Margin Bottom: 8px.
+
+Input Field Frame: Container Height 52px, Radius 16, Background Card Background (#FFFFFF), Border 1px Border (#EFE9D8).
+
+Placeholder: "you@example.com", Typography: Body, Color: Ink Muted (#6B6B6B), Left Padding: 16px.
+
+Input Field 2 (Password):
+
+
+Label: "Password", Typography: Caption, Color: Ink Muted (#6B6B6B), Margin Bottom: 8px.
+
+Input Field Frame: Container Height 52px, Radius 16, Background Card Background (#FFFFFF), Border 1px Border (#EFE9D8).
+
+Placeholder: "••••••••••••", Typography: Body, Color: Ink Muted (#6B6B6B), Left Padding: 16px.
+
+Action Zone (Margin Top: 32px):
+
+
+Primary Button: Text "Sign In", Width: Full (358px), Height: 56px, Radius: 16, Background: Primary (#5A8FB0), Typography: H2 (White text).
+
+Alternative Action Link: Flex Row, Justify Content: Center, Margin Top: 24px.
+
+
+Label Text: "Don't have an account?", Typography: Caption, Color: Ink Muted (#6B6B6B).
+
+Action Text: " Sign Up", Typography: Caption (Underlined / SemiBold), Color: Primary (#5A8FB0).
+SCREEN 3 – HOME
+Layout Blueprint & Structure
+
+
+Canvas Context: Surface Background (#FCFAF3), Scrollable layout content area, 16px lateral safe padding.
+Global Persistent Navigation Component
+
+
+Bottom Navigation Bar: Fixed to viewport base. Height: 72px, Background: Card Background (#FFFFFF), Border Top: 1px Border (#EFE9D8), Layout: Horizontal Flex Row with equal distribution (space-around).
+
+
+Item 1: Icon Home (Active State, Fill: Primary (#5A8FB0)), Text Label Below: "Home", Typography: Small, Color: Primary (#5A8FB0).
+
+Item 2: Icon Check Square (Inactive), Text Label Below: "Tasks", Typography: Small, Color: Ink Muted (#6B6B6B).
+
+Item 3: Specialized Central Floating Action Button (FAB). Offset raised container circle size 48px, Background: Primary (#5A8FB0), Center Icon: Plus (White vector), Radius: Full.
+
+Item 4: Icon User (Inactive), Text Label Below: "Profile", Typography: Small, Color: Ink Muted (#6B6B6B).
+Content Stream
+
+
+Greeting Header (Margin Top: 24px):
+
+
+Left Column: Title "Hello, Achiever", Typography: H1, Color: Ink (#1A1A1A). Subheading "Ready to ride the wave today?", Typography: Caption, Color: Ink Muted (#6B6B6B).
+
+Right Column: Profile Avatar frame 40px × 40px, Radius: Full, image filled with modern abstract human vector style placeholder.
+
+Statistics Section (Margin Top: 24px):
+
+
+Horizontal Scroll / Row Layout, Flex Wrap Row with Gap: 12px.
+
+Stat Card 1: Width: 110px, Height: 80px, Background: Card Background (#FFFFFF), Radius: 12, Border: 1px Border (#EFE9D8). Inner layout vertical stack: Value "5", Typography: H1, Color: Primary (#5A8FB0); Label "Today", Typography: Small, Color: Ink Muted (#6B6B6B).
+
+Stat Card 2: Width: 110px, Height: 80px, Background: Card Background (#FFFFFF), Radius: 12, Border: 1px Border (#EFE9D8). Inner layout vertical stack: Value "12", Typography: H1, Color: Priority Low / Success (#7A9165); Label "Done", Typography: Small, Color: Ink Muted (#6B6B6B).
+
+Stat Card 3: Width: 110px, Height: 80px, Background: Card Background (#FFFFFF), Radius: 12, Border: 1px Border (#EFE9D8). Inner layout vertical stack: Value "3", Typography: H1, Color: Priority High (#C76A55); Label "Streak", Typography: Small, Color: Ink Muted (#6B6B6B).
+
+Today's Feed Section (Margin Top: 32px):
+
+
+Section Header: "TODAY", Typography: Caption (Tracking uppercase setting), Color: Ink Muted (#6B6B6B), Margin Bottom: 12px.
+
+Task Card 1 (Active State):
+
+
+Structure: Card Box Height: 72px, Background: Card Background (#FFFFFF), Radius: 12, Soft Shadow, Internal Padding: 16px, Flex Row Layout.
+
+Left Element: Checkbox element (Square box 20px × 20px, Radius 8, Border 2px Ink Muted (#6B6B6B)).
+
+Middle Element Stack: Task Title "Submit DBMS Assignment", Typography: Body (SemiBold), Color: Ink (#1A1A1A); Due Date icon + text "Due at 11:59 PM", Typography: Small, Color: Ink Muted (#6B6B6B).
+
+Right Element: Priority Dot Indicator diameter 8px, Color: Priority High (#C76A55).
+
+Task Card 2 (Active State):
+
+
+Structure: Same dimensions and design tokens.
+
+Middle Element Stack: Title "Call Amma at 6 PM", Subtitle "Due at 6:00 PM".
+
+Right Element: Priority Dot Indicator, Color: Priority Low / Success (#7A9165).
+
+Task Card 3 (Active State):
+
+
+Structure: Same dimensions and design tokens.
+
+Middle Element Stack: Title "Complete UI Project", Subtitle "Due Tomorrow".
+
+Right Element: Priority Dot Indicator, Color: Priority High (#C76A55).
+
+Task Card 4 (Completed State):
+
+
+Structure: Card Box Height: 72px, Background: Card Background (#FFFFFF), Opacity: 0.6, Radius: 12, Internal Padding: 16px, Flex Row Layout.
+
+Left Element: Checkbox filled state (Square box 20px × 20px, Radius 8, Background: Priority Low / Success (#7A9165), Center Check Icon: White).
+
+Middle Element Stack: Title text "Gym Leg Day" containing Strikethrough transformation effect, Typography: Body, Color: Ink Muted (#6B6B6B).
+
+Right Element: Priority Dot Indicator muted, Color: Priority Low / Success (#7A9165).
+SCREEN 4 – TASK LIST
+Layout Blueprint & Structure
+
+
+Canvas Context: Surface Background (#FCFAF3), Scrollable core, 16px lateral safe padding.
+
+Persistent Navigation Component: Bottom Navigation Bar instantiated identically to Home screen configurations with active state icon targeting the "Tasks" button container element.
+
+Header Section (Margin Top: 24px):
+
+
+Title: "All Tasks", Typography: Display, Color: Ink (#1A1A1A).
+
+Filter System (Margin Top: 16px, Horizontal Stack Layer):
+
+
+Flex Container Row, Horizontal Scroll overflow permitted, Gap: 8px.
+
+Chip 1 (Active Filter State): Text "All", Padding: 8px horizontal, 16px vertical, Background: Primary (#5A8FB0), Radius: 8, Typography: Caption (White text).
+
+Chip 2 (Inactive Filter State): Text "Today", Padding: 8px horizontal, 16px vertical, Background: Card Background (#FFFFFF), Border: 1px Border (#EFE9D8), Radius: 8, Typography: Caption, Color: Ink Muted (#6B6B6B).
+
+Chip 3 (Inactive Filter State): Text "Work", Padding: 8px horizontal, 16px vertical, Background: Card Background (#FFFFFF), Border: 1px Border (#EFE9D8), Radius: 8, Typography: Caption, Color: Ink Muted (#6B6B6B).
+
+Chip 4 (Inactive Filter State): Text "Personal", Padding: 8px horizontal, 16px vertical, Background: Card Background (#FFFFFF), Border: 1px Border (#EFE9D8), Radius: 8, Typography: Caption, Color: Ink Muted (#6B6B6B).
+
+Task Feed Collection (Margin Top: 24px, Vertical Column Layout, Gap: 12px):
+
+
+Task 1: Title "Review Exam Notes", Subtitle "Jun 5", Priority Dot: Priority Medium (#C9A23A).
+
+Task 2: Title "Finish Presentation", Subtitle "Jun 6", Priority Dot: Priority High (#C76A55).
+
+Task 3: Title "Weekly Planning", Subtitle "Jun 7", Priority Dot: Priority Low / Success (#7A9165).
+
+Task 4: Title "Submit DBMS Assignment", Subtitle "Today", Priority Dot: Priority High (#C76A55).
+
+Task 5: Title "Call Amma at 6 PM", Subtitle "Today", Priority Dot: Priority Low / Success (#7A9165).
+
+Task 6: Title "Complete UI Project", Subtitle "Tomorrow", Priority Dot: Priority High (#C76A55).
+SCREEN 5 – TASK DETAIL
+Layout Blueprint & Structure
+
+
+Canvas Context: Surface Background (#FCFAF3), 16px lateral safe padding. Clean configuration workspace omitting global tab bar to isolate intent.
+
+Navigation Header Layer (Margin Top: 24px):
+
+
+Flex Row layout container. Left elements: Back Arrow vector glyph button element (Frame 32px × 32px, Vector Fill: Ink (#1A1A1A)). Title Label: "Task Details", Typography: H2, Color: Ink (#1A1A1A), Margin Left: 12px.
+
+Hero Content Container (Margin Top: 32px, Background Card Layout):
+
+
+Card Container Box: Full width layout (358px), Height: Auto dynamic sizing, Background: Card Background (#FFFFFF), Radius: 12, Soft Shadow, Padding: 24px.
+
+Item Title Layout Row:
+
+
+Text Block: "Submit DBMS Assignment", Typography: H1, Color: Ink (#1A1A1A).
+
+Priority Metadata Node (Margin Top: 16px):
+
+
+Horizontal Flex Alignment Row. Label text "Priority", Typography: Caption, Color: Ink Muted (#6B6B6B).
+
+Priority Chip Component (Aligned Right): Horizontal spacing block. Background: Priority High (#C76A55) at 10% alpha profile tone overlay. Border: None. Internal Text Matrix element: "High", Typography: Small (Bold weight overrides enabled), Color: Priority High (#C76A55).
+
+Schedule Metadata Node (Margin Top: 12px):
+
+
+Horizontal Flex Alignment Row. Label text "Due Date", Typography: Caption, Color: Ink Muted (#6B6B6B).
+
+Value String Component (Aligned Right): Text "Today, 11:59 PM", Typography: Body (SemiBold), Color: Ink (#1A1A1A).
+
+Dividing Element Rule (Margin Top: 24px, Margin Bottom: 24px):
+
+
+Line separator height 1px, Horizontal fill: Full width parameter. Color vector asset: Border (#EFE9D8).
+
+Notes Component Matrix Block:
+
+
+Label: "Notes", Typography: Caption, Color: Ink Muted (#6B6B6B), Margin Bottom: 8px.
+
+Paragraph Body Copy: "Ensure SQL scripts are fully tested against the production sandbox profile schema. Export log outputs into the submission zip folder before system upload deadline window closing sequence.", Typography: Body, Color: Ink (#1A1A1A).
+
+Action Footing Workspace Zone (Fixed Base Layout Container, Margin Bottom: 32px):
+
+
+Primary Button Block: Text Label String "Mark Complete", Width Layout dimension: Full (358px), Height Axis profile: 56px, Corner Radius property value: 16. Background Vector Fill: Primary (#5A8FB0), Text Style: H2 format standard white array configuration structure mapping.
+SCREEN 6 – ADD TASK
+Layout Blueprint & Structure
+
+
+Canvas Context: Surface Background (#FCFAF3), 16px lateral safe padding system.
+
+Navigation Header Layer (Margin Top: 24px):
+
+
+Flex Row. Left Node: Back Vector Close cross icon glyph. Center Space Node: Title "Create New Task", Typography: H2, Color: Ink (#1A1A1A). Right Node: Void structural spacer asset.
+
+Form Field Array Layout (Margin Top: 32px, Stack Direction Vertical, Element Spacing Gap: 24px):
+
+
+Input Field Component (Task Title Input):
+
+
+Header Element Layer: Title Label text "What needs to be done?", Typography: Caption, Color: Ink Muted (#6B6B6B), Margin Bottom: 8px.
+
+Text Box Element Field: Height Layout Axis 52px, Box Corner Spec: 16, Background Layer Fill: Card Background (#FFFFFF), Boundary Path Line Vector: 1px Border (#EFE9D8).
+
+Active Focus Line Placeholder Input Value String: "e.g., Submit DBMS Assignment", Typography Framework Metric: Body, Structural Text Element Color: Ink Muted (#6B6B6B), Horizontal Padding Start Boundary: 16px.
+
+Input Field Component (Date Array Select Field):
+
+
+Header Element Layer: Title Label text "Set Due Date", Typography: Caption, Color: Ink Muted (#6B6B6B), Margin Bottom: 8px.
+
+Box Element Field Base: Height Axis Metric 52px, Box Corner Spec: 16, Background Layer Fill: Card Background (#FFFFFF), Boundary Path Line Vector: 1px Border (#EFE9D8). Inline Vector Asset Element (Right Position Marker Layout): Calendar grid small line graphic system glyph marker indicator block profile.
+
+Placeholder Input Value String Component: "Select Date & Time...", Typography Metric: Body, Color Tone Allocation: Ink Muted (#6B6B6B), Horizontal Padding Boundary Anchor: 16px.
+
+Interactive Input Selector Row Array Component (Priority Level Interface Input Matrix Layout):
+
+
+Header Element Layer: Title Label text "Assign Priority Level", Typography: Caption, Color: Ink Muted (#6B6B6B), Margin Bottom: 12px.
+
+Horizontal Flex Row Element Layout Track, Alignment Pattern: Equal spacing split column, Spacing Gap Metric: 8px.
+
+Priority Target Block 1: Action Select Box Container. Height Axis Layout Metric 44px, Structural Corner Matrix: 8. Background Color Allocation Frame: Card Background (#FFFFFF), Border Line Profile: 1px solid Priority High (#C76A55). Text Node Component Entry: "High", Text Formatting Engine: Caption (SemiBold modification active layer), Color Vector Core Assignment: Priority High (#C76A55), Visual Justify Axis Setting: Content Center.
+
+Priority Target Block 2: Action Select Box Container. Height Axis Layout Metric 44px, Structural Corner Matrix: 8. Background Color Allocation Frame: Card Background (#FFFFFF), Border Line Profile: 1px solid Border (#EFE9D8). Text Node Component Entry: "Medium", Text Formatting Engine: Caption, Color Vector Core Assignment: Ink (#1A1A1A), Visual Justify Axis Setting: Content Center.
+
+Priority Target Block 3: Action Select Box Container. Height Axis Layout Metric 44px, Structural Corner Matrix: 8. Background Color Allocation Frame: Card Background (#FFFFFF), Border Line Profile: 1px solid Border (#EFE9D8). Text Node Component Entry: "Low", Text Formatting Engine: Caption, Color Vector Core Assignment: Ink (#1A1A1A), Visual Justify Axis Setting: Content Center.
+
+Submission Structural Baseline Block Area (Margin Top: 48px):
+
+
+Primary Interface Form Button Matrix Container: Explicit Title Value Array String "Save Task", Total Screen Structural Box Width Horizon Scale: Full Frame (358px), Base Height Coordinate Setting: 56px, Corner Rounded Vector Specification value metric: 16. Structural Core Fill Target Code: Primary (#5A8FB0). Style font mapping overlay standard: Typeface class H2 pure white tone format specification values.
+SCREEN 7 – SETTINGS
+Layout Blueprint & Structure
+
+
+Canvas Context: Surface Background (#FCFAF3), 16px lateral safe padding space architecture.
+
+Persistent Navigation Component: Bottom Navigation Bar instantiated identically to Home screen configuration rules with active structural state icon targeting the "Profile" button container element layout workspace.
+
+Header Section (Margin Top: 24px):
+
+
+Title Component Matrix Block: Text String Content "Settings", Typography Design System Token Rule: Display, Base Content Element Hex Vector Tone: Ink (#1A1A1A).
+
+User Identity Card Module (Margin Top: 24px):
+
+
+Structural Frame Dimension Module Box Core: Sizing Width Full (358px), Height Axis dimension metric mapping 88px, Base Background Grid Tone Component: Card Background (#FFFFFF), Radius Specification Token: 12, Soft Shadow Configuration, Interior Padding Standard Step: 16px. Flex Axis Component Setting Direction: Row.
+
+Left Visual Axis Block: Core Avatar Node Circle layout canvas sizing parameter 56px × 56px, Radius Token Parameter Spec: Full. Render structural visual pattern image filling space block.
+
+Right Context Column Container Stack Area (Margin Left Step Anchor: 16px, Top Tracking Center):
+
+
+Identity Field Title String Text Row: "Amrit Kumar", Typography Layer Mapping Specification Rule: H2, Text Color Vector Allocation Core: Ink (#1A1A1A).
+
+Secondary Metadata Reference Subtext Line: "amrit@tideapp.io", Typography Layer Mapping Specification Rule: Caption, Text Color Vector Allocation Core: Ink Muted (#6B6B6B), Elevation Structural Step Spacing: 4px.
+
+System Preference Control List Interface Block (Margin Top: 32px):
+
+
+Control Component Label Block Framework: Text Segment Upper Header "PREFERENCES", Typography Framework Spec: Small (Letter spacing track modification active), Text Color Vector Mapping Core: Ink Muted (#6B6B6B), Margin Elevation Lower Axis Boundary: 12px.
+
+Control Interaction Card Wrapper List Box Array: Column Track Stack, Gap Parameter Step Setting: 1px (Simulated divider trace lines using Background fill canvas tracking property Border (#EFE9D8) with individual child module item frames utilizing core Card Background (#FFFFFF) values). Sizing Container Radius Spec Token: 12.
+
+Interactive Row Item Module Item 1 (Dark Mode System Switch Component):
+
+
+Inner Canvas Container Parameter Frame: Sizing Height Axis Metric Scale 56px, Layout Structure Flow Alignment Pattern: Row (Space Between Container distribution targets), Lateral Inner Left/Right padding parameter tracking step: 16px.
+
+Left Column Descriptor Text Node Frame: Label Text Area "Dark Mode", Typography Rule: Body, Color Hex String Vector Code target: Ink (#1A1A1A).
+
+Right Control Object Graphic Container Node Asset: Toggle Switch Component Element Frame (Width Target Measure 44px × Height Target Measure 24px, Core Base Pill Shape Corner Target Spec: Full, State Vector Core Logic: False/Inactive, Background Matrix Tone Code Value assignment path: Border (#EFE9D8) featuring internal sliding capsule circle layout knob component positioned at left alignment start threshold coordinate zero line colored pure white surface hex value).
+
+Interactive Row Item Module Item 2 (System Notifications Dispatch Control Switch Component):
+
+
+Inner Canvas Container Parameter Frame: Sizing Height Axis Metric Scale 56px, Layout Structure Flow Alignment Pattern: Row (Space Between Container distribution targets), Lateral Inner Left/Right padding parameter tracking step: 16px.
+
+Left Column Descriptor Text Node Frame: Label Text Area "Push Notifications", Typography Rule: Body, Color Hex String Vector Code target: Ink (#1A1A1A).
+
+Right Control Object Graphic Container Node Asset: Toggle Switch Component Element Frame (Width Target Measure 44px × Height Target Measure 24px, Core Base Pill Shape Corner Target Spec: Full, State Vector Core Logic: True/Active, Background Matrix Tone Code Value assignment path: Primary (#5A8FB0) featuring internal sliding capsule circle layout knob component positioned at right alignment threshold offset line colored pure white surface hex value).
+
+Interactive Row Item Module Item 3 (System Email Daily Summary Dispatch Control Switch Component):
+
+
+Inner Canvas Container Parameter Frame: Sizing Height Axis Metric Scale 56px, Layout Structure Flow Alignment Pattern: Row (Space Between Container distribution targets), Lateral Inner Left/Right padding parameter tracking step: 16px.
+
+Left Column Descriptor Text Node Frame: Label Text Area "Daily Summary Email", Typography Rule: Body, Color Hex String Vector Code target: Ink (#1A1A1A).
+
+Right Control Object Graphic Container Node Asset: Toggle Switch Component Element Frame (Width Target Measure 44px × Height Target Measure 24px, Core Base Pill Shape Corner Target Spec: Full, State Vector Core Logic: False/Inactive, Background Matrix Tone Code Value assignment path: Border (#EFE9D8) featuring internal sliding capsule circle layout knob component positioned at left alignment start threshold coordinate zero line colored pure white surface hex value).
+
+System Exit Account Operation Zone Target Layer (Margin Top: 32px):
+
+
+Interactive Primary Alternative Trigger Area Button Strip Block Component: Structural Text Label Array Value String Core Selection Target "Log Out", Absolute Sizing Width Variable Specification Target Canvas Horizon Scale: Full Box Frame (358px), Structural Base Height Axis Coordinate Dimension Sizing Rule: 56px, Corner Radius property value: 16. Structural Box Core Boundary Border Parameter Stroke Value Layer: 1px Solid Alpha Stroke Line matching Priority High (#C76A55) color parameters. Core Element Box Interior Fill Mode Target Code Parameter State: Transparent Empty Null Value frame structure. Font Typography Mapping Token Framework Selector Class Core: H2 modified structural styling color vector target tracking path value to code directly overlay matching color: Priority High (#C76A55). Text Frame Horizontal Justify Layout Orientation Selection Center Node target.
