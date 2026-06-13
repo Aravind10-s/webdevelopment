@@ -1,0 +1,15 @@
+import smtplib
+import schedule
+import time
+import requests
+
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+
+
+pip install -r requirements.txt
+
+
+
+python main.py
